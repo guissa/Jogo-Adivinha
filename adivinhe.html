@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo adivinhação</title>
+</head>
+<body>
+    <b> Adivinhe abaixo o número de 0 a 10 </b>
+    <input/>
+    <button> Adivinhe o numero correto </button>
+    
+    <script> 
+
+        var numero = [Math.round(Math.random)];
+    
+        var input = document.querySelector("input");
+        input.focus();
+    
+        function verifica() {
+             
+            var achou = false;
+    
+            for(var posicao = 0; posicao < numero.length; posicao++) {
+    
+                if(input.value == numero [posicao]) {
+    
+                   alert("Voce ACERTOU");
+                   achou = true;
+                   break;
+                }
+            }
+    
+            if(achou == false) {
+    
+                alert("Voce ERROU");
+     
+            }            
+            
+            input.value = "";
+            input.focus();
+        }
+        var button = document.querySelector("button");
+        
+        button.onclick = verifica;
+    
+    </script>
+</body>
+</html>
